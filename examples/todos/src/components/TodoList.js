@@ -3,8 +3,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
+import type { Todos } from '../reducers/todos'
 
-const TodoList = ({ todos, toggleTodo }: typeof(TodoList.propTypes) ) => (
+type TodoListType = {
+  todos: Todos,
+  toggleTodo: number => void
+}
+
+const TodoList = ({ todos, toggleTodo }: TodoListType ) => (
   <ul>
     {todos.map(todo =>
       <Todo

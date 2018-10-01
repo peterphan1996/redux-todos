@@ -3,22 +3,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
-import type {Dispatch as ReduxDispatch} from 'redux';
+import type {Dispatch} from '../types';
 
-type VisibilityFilterAction = {
-  type: 'SET_VISIBILITY_FILTER',
-  +filter: 'SHOW_ALL' | 'SHOW_ACTIVE' | 'SHOW_COMPLETED';
-};
 
-type TodosAction =
-  | { type: 'ADD_TODO', +id: number, +text: Text }
-  | { type: 'TOGGLE_TODO', +id: number };
-
-type ReduxInitAction = { type: '@@INIT' };
-
-type Action = ReduxInitAction | TodosAction | VisibilityFilterAction;
-
-type Dispatch = ReduxDispatch<Action>;
 
 type Props = {
   dispatch: Dispatch;

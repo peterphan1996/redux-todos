@@ -6,7 +6,7 @@ type Todo = {
   +completed: boolean
 }
 
-type Todos = Array<Todo>;
+export type Todos = Array<Todo>;
 
 export type TodosAction = | {type: 'ADD_TODO', id: number, text: string} | {type: 'TOGGLE_TODO', id: number}
 
