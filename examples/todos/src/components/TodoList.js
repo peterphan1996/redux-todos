@@ -1,8 +1,10 @@
+// @flow
+
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 
-const TodoList = ({ todos, toggleTodo }) => (
+const TodoList = ({ todos, toggleTodo }: typeof(TodoList.propTypes) ) => (
   <ul>
     {todos.map(todo =>
       <Todo

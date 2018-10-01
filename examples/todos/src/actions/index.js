@@ -1,18 +1,10 @@
+// @flow
+
 let nextTodoId = 0
-export const addTodo = text => ({
+export const addTodo = (text: string) => ({
   type: 'ADD_TODO',
   id: nextTodoId++,
   text
-})
-
-export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-})
-
-export const toggleTodo = id => ({
-  type: 'TOGGLE_TODO',
-  id
 })
 
 export const VisibilityFilters = {
@@ -20,3 +12,15 @@ export const VisibilityFilters = {
   SHOW_COMPLETED: 'SHOW_COMPLETED',
   SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
+
+export const setVisibilityFilter = (filter: typeof VisibilityFilters) => ({
+  type: 'SET_VISIBILITY_FILTER',
+  filter
+})
+
+export const toggleTodo = (id: number) => ({
+  type: 'TOGGLE_TODO',
+  id
+})
+
+

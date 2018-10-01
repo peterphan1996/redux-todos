@@ -1,3 +1,4 @@
+// @flow
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore } from 'redux'
@@ -6,10 +7,11 @@ import App from './components/App'
 import rootReducer from './reducers'
 
 const store = createStore(rootReducer)
+const root = document.getElementById('root')
 
-render(
+root && render(
   <Provider store={store}>
     <App />
   </Provider>,
-  document.getElementById('root')
+  root
 )
