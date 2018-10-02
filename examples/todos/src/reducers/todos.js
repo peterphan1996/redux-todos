@@ -16,7 +16,6 @@ const toggleTodo = (todos: Todos, id: number): Todos => todos.map(todo =>
       : todo
   )
 
-
 const todos = (state: Todos = [], action: TodosAction) => {
   switch (action.type) {
     case 'ADD_TODO':

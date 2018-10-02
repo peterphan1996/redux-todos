@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import type {Dispatch} from '../types';
 
-
-
 type Props = {
   dispatch: Dispatch;
 }

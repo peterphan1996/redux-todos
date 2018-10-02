@@ -6,9 +6,6 @@ import Link from '../components/Link'
 import type { State } from '../types/index'
 import type { VisibilityFilter } from '../types/visibilityFilter'
 
-
-// type stateType = TodosState & VisibilityFilterState
-
 type OwnPropsType = {
   filter: VisibilityFilter;
 }
