@@ -1,27 +1,55 @@
+// @flow
+
 import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
+import type {Dispatch} from '../types';
 
-const AddTodo = ({ dispatch }) => {
-  let input
+type Props = {
+  dispatch: Dispatch;
+}
 
-  return (
-    <div>
-      <form onSubmit={e => {
-        e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(addTodo(input.value))
-        input.value = ''
-      }}>
-        <input ref={node => input = node} />
+type State = {
+  value: string
+}
+
+class AddTodo extends React.Component<Props, State> {
+  state = {
+    value: ''
+  }
+
+  input: HTMLInputElement;
+
+  handleChange = (e: SyntheticKeyboardEvent<HTMLInputElement>) => {
+    this.setState({
+      value: e.currentTarget.value
+    })
+  }
+
+  handleSubmit = (event: Event) => {
+    event.preventDefault();
+    if(!this.state.value.trim()) {
+      return
+    }
+    this.props.dispatch(addTodo(this.state.value));
+    this.setState({
+      value: ''
+    })
+  }
+
+  render() {
+    return (
+      <div>
+      <form onSubmit={this.handleSubmit}>
+        <input value={this.state.value} onChange={this.handleChange} />
         <button type="submit">
           Add Todo
         </button>
       </form>
     </div>
-  )
+    )
+  }
+
 }
 
 export default connect()(AddTodo)

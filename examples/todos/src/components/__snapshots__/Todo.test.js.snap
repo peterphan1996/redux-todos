@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo renders without crashing 1`] = `
+<li
+  onClick={[MockFunction]}
+  style={
+    Object {
+      "textDecoration": "none",
+    }
+  }
+>
+  test
+</li>
+`;
