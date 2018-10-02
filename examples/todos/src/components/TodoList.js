@@ -3,7 +3,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
-import type { Todos } from '../reducers/todos'
+import type { Todos } from '../types'
 
 type TodoListType = {
   todos: Todos,

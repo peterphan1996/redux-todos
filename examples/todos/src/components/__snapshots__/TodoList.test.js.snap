@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList renders without crashing 1`] = `<ul />`;
+
+exports[`TodoList with todos renders a list of todos 1`] = `
+<ul>
+  <Todo
+    completed={false}
+    id={0}
+    key="0"
+    onClick={[Function]}
+    text="Codelink"
+  />
+  <Todo
+    completed={true}
+    id={0}
+    key="0"
+    onClick={[Function]}
+    text="Nhat"
+  />
+</ul>
+`;

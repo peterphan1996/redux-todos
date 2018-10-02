@@ -26,8 +26,8 @@ class AddTodo extends React.Component<Props, State> {
     })
   }
 
-  handleSubmit = (e: Event) => {
-    e.preventDefault();
+  handleSubmit = (event: Event) => {
+    event.preventDefault();
     if(!this.state.value.trim()) {
       return
     }
@@ -41,7 +41,7 @@ class AddTodo extends React.Component<Props, State> {
     return (
       <div>
       <form onSubmit={this.handleSubmit}>
-        <input value={this.state.value} onChange={this.handleSubmit} />
+        <input value={this.state.value} onChange={this.handleChange} />
         <button type="submit">
           Add Todo
         </button>

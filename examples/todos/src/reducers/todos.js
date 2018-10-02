@@ -1,14 +1,6 @@
 // @flow
 
-type Todo = {
-  +id: number,
-  +text: string;
-  +completed: boolean
-}
-
-export type Todos = Array<Todo>;
-
-export type TodosAction = | {type: 'ADD_TODO', id: number, text: string} | {type: 'TOGGLE_TODO', id: number}
+import { Todos, TodosAction } from '../types'
 
 const toggleTodo = (todos: Todos, id: number): Todos => todos.map(todo =>
     (todo.id === id)
